@@ -25,6 +25,9 @@ const UNRULY_PLATFORMS = [
 function FeaturedReleaseSection() {
   return (
     <section style={{ backgroundColor: C.bgAlt, padding: "60px 32px" }}>
+      <p style={{ textAlign: "center", fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "32px" }}>
+        New Comedy Special &amp; Album — Out Now
+      </p>
       <div
         style={{
           maxWidth: "1100px",
@@ -37,9 +40,7 @@ function FeaturedReleaseSection() {
       >
         {/* LEFT: text + streaming buttons */}
         <div style={{ flex: "1 1 400px", display: "flex", flexDirection: "column", gap: "16px" }}>
-          <p style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: C.accent, margin: 0 }}>
-            New Comedy Special &amp; Album — Out Now
-          </p>
+
           <h2 style={{ fontFamily: "var(--font-bebas), Impact, sans-serif", fontSize: "clamp(3rem, 6vw, 5rem)", letterSpacing: "0.05em", lineHeight: 1.0, margin: 0, color: C.text }}>
             UNRULY
           </h2>
