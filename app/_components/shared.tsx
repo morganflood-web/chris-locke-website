@@ -70,55 +70,55 @@ export function Header({ activePath }: { activePath?: string }) {
         top: 0,
         zIndex: 100,
         borderBottom: `1px solid ${C.border}`,
-        textAlign: "center",
-        padding: "14px 16px 10px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "0 24px",
+        height: "52px",
       }}
     >
-      {/* Name */}
+      {/* Left: Nav */}
+      <nav style={{ display: "flex", flexWrap: "wrap", gap: "20px", alignItems: "center" }}>
+        {NAV_ITEMS.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            style={{
+              color: activePath === item.href ? C.accent : C.light,
+              textDecoration: "none",
+              fontSize: "0.72rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              fontWeight: 500,
+              whiteSpace: "nowrap",
+            }}
+          >
+            {item.label}
+          </Link>
+        ))}
+      </nav>
+
+      {/* Centre: Name */}
       <Link
         href="/"
         style={{
-          display: "block",
-          fontSize: "clamp(1.1rem, 4vw, 1.6rem)",
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+          fontSize: "clamp(1rem, 3vw, 1.4rem)",
           letterSpacing: "0.2em",
           textTransform: "uppercase",
           textDecoration: "none",
           color: C.text,
           fontFamily: "var(--font-bebas), Impact, sans-serif",
-          marginBottom: "6px",
           whiteSpace: "nowrap",
         }}
       >
         CHRIS ROBINSON
       </Link>
 
-      {/* Nav — always visible, wraps gracefully on mobile */}
-      <nav style={{ display: "flex", flexWrap: "wrap", gap: "0", justifyContent: "center", marginBottom: "8px" }}>
-        {NAV_ITEMS.map((item, i) => (
-          <span key={item.href} style={{ display: "flex", alignItems: "center" }}>
-            {i > 0 && (
-              <span style={{ color: C.border, margin: "0 6px", fontSize: "0.65rem" }}>|</span>
-            )}
-            <Link
-              href={item.href}
-              style={{
-                color: activePath === item.href ? C.accent : C.light,
-                textDecoration: "none",
-                fontSize: "clamp(0.6rem, 2vw, 0.72rem)",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                fontWeight: 500,
-                padding: "2px 0",
-              }}
-            >
-              {item.label}
-            </Link>
-          </span>
-        ))}
-      </nav>
-
-      {/* Socials */}
-      <div style={{ display: "flex", gap: "16px", justifyContent: "center", alignItems: "center" }}>
+      {/* Right: Socials */}
+      <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
         <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" style={{ color: C.light }} aria-label="Instagram">
           <InstagramIcon />
         </a>

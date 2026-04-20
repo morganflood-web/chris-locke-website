@@ -24,29 +24,19 @@ const UNRULY_PLATFORMS = [
 
 function FeaturedReleaseSection() {
   return (
-    <section style={{ backgroundColor: C.bgAlt, padding: "40px 32px 80px" }}>
-      <p style={{ textAlign: "center", fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "4px" }}>
-        New Comedy Special &amp; Album
+    <section style={{ backgroundColor: C.bgAlt, padding: "48px 32px 64px" }}>
+      {/* "New Comedy Special & Album — Out Now" banner */}
+      <p style={{ textAlign: "center", fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "40px" }}>
+        New Comedy Special &amp; Album — Out Now
       </p>
-      <p style={{ textAlign: "center", fontSize: "0.85rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.snow, marginBottom: "48px", fontWeight: 600 }}>
-        Out Now
-      </p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "48px", maxWidth: "1000px", margin: "0 auto", alignItems: "center" }}>
-        {/* Image — left */}
-        <div style={{ flex: "1 1 280px", maxWidth: "400px" }}>
-          <img
-            src="/images/unruly-hero.jpg"
-            alt="Unruly"
-            style={{ width: "100%", height: "auto", borderRadius: "12px", display: "block" }}
-          />
-        </div>
-        {/* Text + links — right */}
-        <div style={{ flex: "1 1 280px" }}>
-          <h2 style={{ fontFamily: "var(--font-bebas), Impact, sans-serif", fontSize: "clamp(3rem, 7vw, 5rem)", letterSpacing: "0.05em", color: C.text, margin: "0 0 4px" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "48px", maxWidth: "1000px", margin: "0 auto", alignItems: "flex-start" }}>
+        {/* Left: title + buttons */}
+        <div style={{ flex: "1 1 300px" }}>
+          <h2 style={{ fontFamily: "var(--font-bebas), Impact, sans-serif", fontSize: "clamp(3.5rem, 8vw, 6rem)", letterSpacing: "0.03em", color: C.text, margin: "0 0 8px", lineHeight: 1 }}>
             UNRULY
           </h2>
-          <p style={{ color: C.light, fontSize: "0.8rem", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "32px" }}>
-            2025 · Comedy Special & Album
+          <p style={{ color: C.light, fontSize: "0.85rem", marginBottom: "28px" }}>
+            2025 · Comedy Special &amp; Album
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {UNRULY_PLATFORMS.map((btn) => (
@@ -58,20 +48,28 @@ function FeaturedReleaseSection() {
                 style={{
                   display: "block",
                   border: `1px solid ${C.accent}`,
-                  color: C.accent,
-                  padding: "10px 0",
+                  color: C.text,
+                  padding: "12px 0",
                   borderRadius: "999px",
-                  fontSize: "0.85rem",
-                  letterSpacing: "0.08em",
+                  fontSize: "0.9rem",
                   textDecoration: "none",
-                  width: "260px",
                   textAlign: "center",
+                  width: "100%",
+                  maxWidth: "400px",
                 }}
               >
                 {btn.label}
               </a>
             ))}
           </div>
+        </div>
+        {/* Right: image */}
+        <div style={{ flex: "1 1 300px", maxWidth: "460px" }}>
+          <img
+            src="/images/unruly-hero.jpg"
+            alt="Unruly"
+            style={{ width: "100%", height: "auto", borderRadius: "12px", display: "block" }}
+          />
         </div>
       </div>
     </section>

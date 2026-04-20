@@ -24,10 +24,7 @@ a {
   color: inherit;
 }
 
-/* Nav always visible on all screen sizes */
+/* Nav always visible */
 header nav {
   display: flex !important;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0;
 }
