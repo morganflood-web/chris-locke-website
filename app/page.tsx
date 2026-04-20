@@ -29,7 +29,7 @@ function FeaturedReleaseSection() {
       <p style={{ textAlign: "center", fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "40px" }}>
         New Comedy Special &amp; Album — Out Now
       </p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "48px", maxWidth: "1000px", margin: "0 auto", alignItems: "flex-start" }}>
+      <div className="featured-release" style={{ display: "flex", flexWrap: "wrap", gap: "48px", maxWidth: "1000px", margin: "0 auto", alignItems: "flex-start" }}>
         {/* Left: title + buttons */}
         <div style={{ flex: "1 1 300px" }}>
           <h2 style={{ fontFamily: "var(--font-bebas), Impact, sans-serif", fontSize: "clamp(3.5rem, 8vw, 6rem)", letterSpacing: "0.03em", color: C.text, margin: "0 0 8px", lineHeight: 1 }}>

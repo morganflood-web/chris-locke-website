@@ -28,3 +28,34 @@ a {
 header nav {
   display: flex !important;
 }
+
+/* Mobile: featured section stacks image on top */
+@media (max-width: 768px) {
+  .featured-release {
+    flex-direction: column-reverse !important;
+  }
+}
+
+/* Mobile header: stack vertically like Rita's */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 12px 16px !important;
+    gap: 6px;
+  }
+  header a[href="/"] {
+    position: static !important;
+    transform: none !important;
+    order: -1;
+  }
+  header nav {
+    order: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 12px !important;
+  }
+  header > div {
+    order: 1;
+  }
+}
