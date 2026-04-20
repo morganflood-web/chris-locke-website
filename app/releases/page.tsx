@@ -141,7 +141,7 @@ export default function ReleasesPage() {
         </div>
 
         {/* Release cards */}
-        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "64px 32px" }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "64px 32px" }}>
           {RELEASES.map((release, idx) => (
             <div
               key={release.id}

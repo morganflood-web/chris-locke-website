@@ -24,7 +24,7 @@ const UNRULY_PLATFORMS = [
 
 function FeaturedReleaseSection() {
   return (
-    <section style={{ backgroundColor: C.bgAlt, padding: "80px 32px" }}>
+    <section style={{ backgroundColor: C.bgAlt, padding: "40px 32px 80px" }}>
       <p style={{ textAlign: "center", fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "4px" }}>
         New Comedy Special &amp; Album
       </p>
