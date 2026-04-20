@@ -78,23 +78,25 @@ export function Header({ activePath }: { activePath?: string }) {
       }}
     >
       {/* Left: Nav */}
-      <nav style={{ display: "flex", flexWrap: "wrap", gap: "20px", alignItems: "center" }}>
-        {NAV_ITEMS.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            style={{
-              color: activePath === item.href ? C.accent : C.light,
-              textDecoration: "none",
-              fontSize: "0.72rem",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              fontWeight: 500,
-              whiteSpace: "nowrap",
-            }}
-          >
-            {item.label}
-          </Link>
+      <nav style={{ display: "flex", flexWrap: "wrap", gap: "0", alignItems: "center" }}>
+        {NAV_ITEMS.map((item, i) => (
+          <span key={item.href} style={{ display: "flex", alignItems: "center" }}>
+            {i > 0 && <span style={{ color: C.border, margin: "0 10px", fontSize: "0.65rem" }}>|</span>}
+            <Link
+              href={item.href}
+              style={{
+                color: activePath === item.href ? C.accent : C.light,
+                textDecoration: "none",
+                fontSize: "0.72rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              {item.label}
+            </Link>
+          </span>
         ))}
       </nav>
 

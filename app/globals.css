@@ -29,13 +29,6 @@ header nav {
   display: flex !important;
 }
 
-/* Mobile: featured section stacks image on top */
-@media (max-width: 768px) {
-  .featured-release {
-    flex-direction: column-reverse !important;
-  }
-}
-
 /* Mobile header: stack vertically like Rita's */
 @media (max-width: 768px) {
   header {
@@ -43,6 +36,7 @@ header nav {
     height: auto !important;
     padding: 12px 16px !important;
     gap: 6px;
+    text-align: center;
   }
   header a[href="/"] {
     position: static !important;
@@ -51,11 +45,20 @@ header nav {
   }
   header nav {
     order: 0;
-    justify-content: center;
+    justify-content: center !important;
     flex-wrap: wrap;
-    gap: 8px 12px !important;
+    gap: 0 !important;
   }
   header > div {
     order: 1;
+    justify-content: center;
+  }
+  /* Mobile: featured section — no gap between image and title */
+  .featured-release {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  .featured-release > div:last-child {
+    order: -1;
   }
 }
