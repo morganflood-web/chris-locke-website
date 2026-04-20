@@ -61,55 +61,58 @@ export function Header({ activePath }: { activePath?: string }) {
   return (
     <header
       style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "16px 32px",
         backgroundColor: C.bg,
         position: "sticky",
         top: 0,
         zIndex: 100,
         borderBottom: `1px solid ${C.border}`,
+        textAlign: "center",
+        padding: "16px 24px 12px",
       }}
     >
-      <nav style={{ display: "flex", gap: "24px" }}>
-        {NAV_ITEMS.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            style={{
-              color: activePath === item.href ? C.accent : C.light,
-              textDecoration: "none",
-              fontSize: "0.75rem",
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-              fontWeight: 500,
-            }}
-          >
-            {item.label}
-          </Link>
-        ))}
-      </nav>
-
+      {/* Name */}
       <Link
         href="/"
         style={{
-          position: "absolute",
-          left: "50%",
-          transform: "translateX(-50%)",
-          fontSize: "1.4rem",
+          display: "block",
+          fontSize: "1.6rem",
           letterSpacing: "0.2em",
           textTransform: "uppercase",
           textDecoration: "none",
           color: C.text,
-          whiteSpace: "nowrap",
           fontFamily: "var(--font-bebas), Impact, sans-serif",
+          marginBottom: "8px",
         }}
       >
         CHRIS ROBINSON
       </Link>
 
-      <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+      {/* Nav */}
+      <nav style={{ display: "flex", gap: "0", justifyContent: "center", marginBottom: "10px" }}>
+        {NAV_ITEMS.map((item, i) => (
+          <span key={item.href} style={{ display: "flex", alignItems: "center" }}>
+            {i > 0 && (
+              <span style={{ color: C.border, margin: "0 8px", fontSize: "0.7rem" }}>|</span>
+            )}
+            <Link
+              href={item.href}
+              style={{
+                color: activePath === item.href ? C.accent : C.light,
+                textDecoration: "none",
+                fontSize: "0.72rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              {item.label}
+            </Link>
+          </span>
+        ))}
+      </nav>
+
+      {/* Socials */}
+      <div style={{ display: "flex", gap: "20px", justifyContent: "center", alignItems: "center" }}>
         <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" style={{ color: C.light }} aria-label="Instagram">
           <InstagramIcon />
         </a>
