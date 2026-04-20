@@ -31,12 +31,12 @@ function FeaturedReleaseSection() {
           margin: "0 auto",
           display: "flex",
           flexWrap: "wrap-reverse",
-          alignItems: "stretch",
-          gap: "48px",
+          alignItems: "center",
+          gap: "64px",
         }}
       >
         {/* LEFT: text + streaming buttons */}
-        <div style={{ flex: "1 1 320px", display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div style={{ flex: "1 1 400px", display: "flex", flexDirection: "column", gap: "16px" }}>
           <p style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: C.accent, margin: 0 }}>
             New Comedy Special &amp; Album — Out Now
           </p>
@@ -60,7 +60,8 @@ function FeaturedReleaseSection() {
                   fontSize: "0.85rem",
                   textDecoration: "none",
                   letterSpacing: "0.05em",
-                  maxWidth: "320px",
+                  maxWidth: "400px",
+                  width: "100%",
                 }}
               >
                 {btn.label}
@@ -68,12 +69,12 @@ function FeaturedReleaseSection() {
             ))}
           </div>
         </div>
-        {/* RIGHT: image — stretches to match left column height */}
-        <div style={{ flex: "1 1 320px", display: "flex" }}>
+        {/* RIGHT: image */}
+        <div style={{ flex: "1 1 320px", display: "flex", justifyContent: "center" }}>
           <img
             src="/images/unruly-hero.jpg"
             alt="Unruly"
-            style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "12px", display: "block" }}
+            style={{ width: "100%", maxWidth: "560px", borderRadius: "12px", display: "block" }}
           />
         </div>
       </div>
