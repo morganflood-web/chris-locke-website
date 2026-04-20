@@ -24,9 +24,10 @@ a {
   color: inherit;
 }
 
-/* Mobile nav overflow fix */
-@media (max-width: 640px) {
-  header nav {
-    display: none !important;
-  }
+/* Nav always visible on all screen sizes */
+header nav {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
 }
