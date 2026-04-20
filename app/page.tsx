@@ -24,15 +24,15 @@ const UNRULY_PLATFORMS = [
 
 function FeaturedReleaseSection() {
   return (
-    <section style={{ backgroundColor: C.bgAlt, padding: "80px 32px" }}>
+    <section style={{ backgroundColor: C.bgAlt, padding: "60px 32px" }}>
       <div
         style={{
           maxWidth: "1100px",
           margin: "0 auto",
           display: "flex",
           flexWrap: "wrap-reverse",
-          alignItems: "center",
-          gap: "64px",
+          alignItems: "stretch",
+          gap: "48px",
         }}
       >
         {/* LEFT: text + streaming buttons */}
@@ -68,12 +68,12 @@ function FeaturedReleaseSection() {
             ))}
           </div>
         </div>
-        {/* RIGHT: image */}
-        <div style={{ flex: "1 1 320px", display: "flex", justifyContent: "center" }}>
+        {/* RIGHT: image — stretches to match left column height */}
+        <div style={{ flex: "1 1 320px", display: "flex" }}>
           <img
             src="/images/unruly-hero.jpg"
             alt="Unruly"
-            style={{ width: "100%", maxWidth: "560px", borderRadius: "12px", display: "block" }}
+            style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "12px", display: "block" }}
           />
         </div>
       </div>
