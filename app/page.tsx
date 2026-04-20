@@ -56,15 +56,16 @@ function FeaturedReleaseSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  display: "inline-block",
+                  display: "block",
                   border: `1px solid ${C.accent}`,
                   color: C.accent,
-                  padding: "8px 20px",
+                  padding: "10px 0",
                   borderRadius: "999px",
-                  fontSize: "0.8rem",
+                  fontSize: "0.85rem",
                   letterSpacing: "0.08em",
                   textDecoration: "none",
-                  width: "fit-content",
+                  width: "260px",
+                  textAlign: "center",
                 }}
               >
                 {btn.label}
