@@ -7,6 +7,10 @@ export default function BioPage() {
     <>
       <Header activePath="/bio" />
       <main style={{ backgroundColor: C.bg }}>
+        <div style={{ padding: "60px 32px 40px", textAlign: "center", backgroundColor: C.bgAlt, borderBottom: `1px solid ${C.border}` }}>
+          <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "12px" }}>Comedian · Actor · Writer</p>
+          <h1 style={{ fontFamily: "var(--font-bebas), Impact, sans-serif", fontSize: "clamp(2.5rem, 6vw, 5rem)", letterSpacing: "0.08em", textTransform: "uppercase", color: C.text, margin: 0 }}>Bio</h1>
+        </div>
         <div
           style={{
             display: "flex",
