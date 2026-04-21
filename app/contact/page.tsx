@@ -34,7 +34,7 @@ export default function ContactPage() {
         </div>
 
         {/* Booking info */}
-        <div style={{ maxWidth: "800px", margin: "0 auto", padding: "80px 32px", textAlign: "center" }}>
+        <div style={{ maxWidth: "800px", margin: "0 auto", padding: "80px 32px 80px", textAlign: "center" }}>
           <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.light, marginBottom: "8px" }}>
             Represented by
           </p>

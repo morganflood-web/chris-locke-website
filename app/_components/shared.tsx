@@ -71,7 +71,7 @@ export function Header({ activePath }: { activePath?: string }) {
   return (
     <header
       style={{
-        backgroundColor: C.bg,
+        backgroundColor: C.bgDeep,
         position: "sticky",
         top: 0,
         zIndex: 100,
