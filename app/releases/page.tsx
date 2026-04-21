@@ -65,6 +65,7 @@ const PODCASTS = [
     title: "EVIL MEN",
     type: "Podcast",
     description: "Co-hosted by Chris Locke on The Sonar Network.",
+    artworkFile: "/images/podcast-evil-men.jpg",
     platforms: [
       { label: "Listen on The Sonar Network", url: "https://thesonarnetwork.com/evil-men/" },
     ],
@@ -74,6 +75,7 @@ const PODCASTS = [
     title: "HAPPY GOOD WITH CHRIS LOCKE",
     type: "Podcast",
     description: "Chris Locke's podcast on The Sonar Network.",
+    artworkFile: "/images/podcast-happy-good.jpg",
     platforms: [
       { label: "Listen on The Sonar Network", url: "https://thesonarnetwork.com/happy-good-with-chris-locke/" },
     ],
@@ -83,6 +85,7 @@ const PODCASTS = [
     title: "UTOPIA TO ME WITH CHRIS LOCKE",
     type: "Podcast",
     description: "Chris Locke's podcast on The Sonar Network.",
+    artworkFile: "/images/podcast-utopia-to-me.jpg",
     platforms: [
       { label: "Listen on The Sonar Network", url: "https://thesonarnetwork.com/utopia-to-me-with-chris-locke/" },
     ],
@@ -128,41 +131,7 @@ function AlbumPlaceholder({ id, title, artworkFile }: { id: string; title: strin
   );
 }
 
-function PodcastPlaceholder({ title }: { title: string }) {
-  return (
-    <div
-      style={{
-        width: "100%",
-        aspectRatio: "1 / 1",
-        backgroundColor: C.bgAlt,
-        borderRadius: "12px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        border: `1px solid ${C.border}`,
-        gap: "8px",
-      }}
-    >
-      {/* Podcast mic icon */}
-      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill={C.accent} viewBox="0 0 24 24">
-        <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z" />
-      </svg>
-      <span
-        style={{
-          fontFamily: "var(--font-bebas), Impact, sans-serif",
-          fontSize: "clamp(1rem, 2.5vw, 1.5rem)",
-          letterSpacing: "0.08em",
-          color: C.light,
-          textAlign: "center",
-          padding: "0 16px",
-        }}
-      >
-        {title}
-      </span>
-    </div>
-  );
-}
+
 
 export default function ReleasesPage() {
   return (
@@ -289,9 +258,13 @@ export default function ReleasesPage() {
                   borderBottom: idx < PODCASTS.length - 1 ? `1px solid ${C.border}` : "none",
                 }}
               >
-                {/* Left: podcast visual */}
+                {/* Left: podcast artwork */}
                 <div style={{ flex: "0 0 180px", maxWidth: "200px", alignSelf: "flex-start" }}>
-                  <PodcastPlaceholder title={podcast.title} />
+                  <img
+                    src={podcast.artworkFile}
+                    alt={podcast.title}
+                    style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }}
+                  />
                 </div>
 
                 {/* Right: info + link */}
