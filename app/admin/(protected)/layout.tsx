@@ -3,7 +3,7 @@ import { isAuthenticated } from '@/lib/auth';
 import AdminNav from './AdminNav';
 
 export const metadata = {
-  title: 'Admin — Chris Robinson',
+  title: 'Admin — Chris Locke',
   robots: 'noindex,nofollow',
 };
 
