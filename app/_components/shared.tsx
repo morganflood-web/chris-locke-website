@@ -159,7 +159,7 @@ export function EmailSignup() {
         Be the first to know about new shows, releases, and announcements.
       </p>
       <a
-        href="https://docs.google.com/forms/d/1t08Gp0W6ucWPWZYfYzSgrQzKnfDovbmhZ7pgYL2MVfg/viewform"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdpUXd56SrLM8VV9wITlkbKDCxbDc2ij1Z8XxFbBi96p1kv9g/viewform"
         target="_blank"
         rel="noopener noreferrer"
         style={{
