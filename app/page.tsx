@@ -138,21 +138,23 @@ function UpcomingShowsSection() {
 function BookingSection() {
   return (
     <section style={{ backgroundColor: C.bgAlt, padding: "80px 32px", borderBottom: `1px solid ${C.border}` }}>
-      <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+      <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
         <h2 style={{ fontFamily: "var(--font-bebas), Impact, sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "0.2em", textTransform: "uppercase", color: C.text, marginBottom: "12px" }}>
           Booking
         </h2>
         <p style={{ fontSize: "0.85rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.light, marginBottom: "32px" }}>
           Grand Wave Entertainment
         </p>
-        <div style={{ display: "flex", gap: "48px", justifyContent: "center", flexWrap: "wrap" }}>
-          <div>
-            <p style={{ color: C.text, fontSize: "0.95rem", marginBottom: "4px" }}>Morgan Flood &amp; Carolyn Sterling</p>
-            <p style={{ color: C.light, fontSize: "0.85rem", marginBottom: "8px" }}>Canada</p>
-            <a href="mailto:morgan@grandwaveentertainment.com" style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none", display: "block" }}>
+        <div style={{ display: "flex", gap: "64px", justifyContent: "center", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "6px", alignItems: "center" }}>
+            <p style={{ color: C.text, fontSize: "1rem", fontWeight: 600, margin: 0 }}>Morgan Flood</p>
+            <a href="mailto:morgan@grandwaveentertainment.com" style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none" }}>
               morgan@grandwaveentertainment.com
             </a>
-            <a href="mailto:carolyn@grandwaveentertainment.com" style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none", display: "block", marginTop: "4px" }}>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "6px", alignItems: "center" }}>
+            <p style={{ color: C.text, fontSize: "1rem", fontWeight: 600, margin: 0 }}>Carolyn Sterling</p>
+            <a href="mailto:carolyn@grandwaveentertainment.com" style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none" }}>
               carolyn@grandwaveentertainment.com
             </a>
           </div>

@@ -34,70 +34,46 @@ export default function ContactPage() {
         </div>
 
         {/* Booking info */}
-        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "80px 32px", textAlign: "center" }}>
-          <div
+        <div style={{ maxWidth: "800px", margin: "0 auto", padding: "80px 32px", textAlign: "center" }}>
+          <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.light, marginBottom: "8px" }}>
+            Represented by
+          </p>
+          <h2
             style={{
-              backgroundColor: C.bgAlt,
-              border: `1px solid ${C.border}`,
-              borderRadius: "12px",
-              padding: "48px 40px",
+              fontFamily: "var(--font-bebas), Impact, sans-serif",
+              fontSize: "2rem",
+              letterSpacing: "0.2em",
+              color: C.text,
+              marginBottom: "40px",
             }}
           >
-            <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.light, marginBottom: "8px" }}>
-              Represented by
-            </p>
-            <h2
-              style={{
-                fontFamily: "var(--font-bebas), Impact, sans-serif",
-                fontSize: "2rem",
-                letterSpacing: "0.1em",
-                color: C.accent,
-                marginBottom: "32px",
-              }}
-            >
-              Grand Wave Entertainment
-            </h2>
+            Grand Wave Entertainment
+          </h2>
 
-            <div style={{ display: "flex", gap: "48px", justifyContent: "center", flexWrap: "wrap" }}>
-              {/* Canada */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "4px", alignItems: "center" }}>
-                <div
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    borderRadius: "50%",
-                    backgroundColor: C.bgDeep,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginBottom: "12px",
-                    fontSize: "1.1rem",
-                    color: C.accent,
-                    fontFamily: "var(--font-bebas), Impact, sans-serif",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  GW
-                </div>
-                <p style={{ color: C.light, fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "4px" }}>Canada</p>
-                <p style={{ color: C.text, fontSize: "1rem", fontWeight: 600, marginBottom: "4px" }}>Morgan Flood &amp; Carolyn Sterling</p>
-                <a
-                  href="mailto:morgan@grandwaveentertainment.com"
-                  style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none", display: "block" }}
-                  onMouseOver={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "underline"; }}
-                  onMouseOut={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "none"; }}
-                >
-                  morgan@grandwaveentertainment.com
-                </a>
-                <a
-                  href="mailto:carolyn@grandwaveentertainment.com"
-                  style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none", display: "block", marginTop: "4px" }}
-                  onMouseOver={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "underline"; }}
-                  onMouseOut={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "none"; }}
-                >
-                  carolyn@grandwaveentertainment.com
-                </a>
-              </div>
+          <div style={{ display: "flex", gap: "64px", justifyContent: "center", flexWrap: "wrap" }}>
+            {/* Morgan */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "6px", alignItems: "center" }}>
+              <p style={{ color: C.text, fontSize: "1rem", fontWeight: 600, margin: 0 }}>Morgan Flood</p>
+              <a
+                href="mailto:morgan@grandwaveentertainment.com"
+                style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none" }}
+                onMouseOver={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "underline"; }}
+                onMouseOut={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "none"; }}
+              >
+                morgan@grandwaveentertainment.com
+              </a>
+            </div>
+            {/* Carolyn */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "6px", alignItems: "center" }}>
+              <p style={{ color: C.text, fontSize: "1rem", fontWeight: 600, margin: 0 }}>Carolyn Sterling</p>
+              <a
+                href="mailto:carolyn@grandwaveentertainment.com"
+                style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none" }}
+                onMouseOver={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "underline"; }}
+                onMouseOut={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "none"; }}
+              >
+                carolyn@grandwaveentertainment.com
+              </a>
             </div>
           </div>
         </div>

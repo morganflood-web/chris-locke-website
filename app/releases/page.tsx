@@ -19,6 +19,18 @@ const RELEASES = [
     artworkFile: "/images/tiki-madness.jpg",
   },
   {
+    id: "captain-bones",
+    title: "CAPTAIN BONES",
+    year: "2022",
+    type: "Comedy Special",
+    description: "Chris Locke's critically acclaimed stand-up special. Originally premiered on Crave.",
+    platforms: [
+      { label: "Watch on Apple TV", url: "https://tv.apple.com/ca/show/chris-locke-captain-bones/umc.cmc.qqhl7459pcvgs4bz7ne5s7h7" },
+      { label: "Watch on Prime Video", url: "https://www.primevideo.com/detail/Chris-Locke-Captain-Bones/0JQLOJNNHH18BV5GDWKDQ20BPP" },
+    ],
+    artworkFile: "/images/captain-bones.jpg",
+  },
+  {
     id: "chris-and-sean",
     title: "CHRIS & SEAN ARE TONY AND KEITH IN HORROR!",
     year: "2020",
