@@ -5,25 +5,22 @@ import Link from "next/link";
 // ─── DESIGN TOKENS ───────────────────────────────────────────────────────────
 
 export const C = {
-  bg: "#1C3244",       // mid Arctic Camo blue — base
-  bgAlt: "#2A4A62",   // lighter Arctic Camo — alternating sections
-  bgDeep: "#0F1D26",  // deepest navy — high contrast
-  bgWarm: "#3A6278",  // light Arctic Camo — accent sections
-  bgLight: "#7AAEC8", // lightest Arctic Camo — highlight sections
-  mid: "#4E84A0",     // mid tone
-  light: "#8AB4C8",   // light secondary text
-  snow: "#C8DFE8",    // near-white highlight
-  text: "#EEF5F8",    // near-white text
-  accent: "#C8A45A",  // warm amber — CTA
-  accentHover: "#E0B96A",
-  border: "#2A4A62",
-  borderWarm: "#3A6278",
+  bg: "#EEF6FA",        // pale sky blue — base
+  bgAlt: "#D6ECF5",    // soft water blue — alternating sections
+  bgDeep: "#C2E0EF",   // slightly deeper blue — high contrast
+  bgWarm: "#F5FBFD",   // almost white with blue tint
+  text: "#1A3040",     // dark navy — main text
+  light: "#5A7A8A",    // muted text
+  accent: "#2A8FB5",   // medium ocean blue — CTA
+  accentHover: "#1E6E8E",
+  border: "#B0D4E5",
 };
 
 export const SOCIALS = {
-  instagram: "https://www.instagram.com/snapshotrobinson/",
-  tiktok: "https://www.tiktok.com/@chrisrobinsonjokes",
-  youtube: "https://www.youtube.com/@chrisrobinson5434",
+  instagram: "https://www.instagram.com/chrislockefun/",
+  youtube: "https://www.youtube.com/@chrislockeonline",
+  tiktok: "https://www.tiktok.com/@chrislockeonline",
+  spotify: "https://open.spotify.com/artist/5nKDEO5biBXDNRNQ0iAW8Q",
 };
 
 export const NAV_ITEMS = [
@@ -56,6 +53,14 @@ export function YouTubeIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
       <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+    </svg>
+  );
+}
+
+export function SpotifyIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
     </svg>
   );
 }
@@ -117,7 +122,7 @@ export function Header({ activePath }: { activePath?: string }) {
           whiteSpace: "nowrap",
         }}
       >
-        CHRIS ROBINSON
+        CHRIS LOCKE
       </Link>
 
       {/* Right: Socials */}
@@ -131,6 +136,9 @@ export function Header({ activePath }: { activePath?: string }) {
         <a href={SOCIALS.youtube} target="_blank" rel="noopener noreferrer" style={{ color: C.light }} aria-label="YouTube">
           <YouTubeIcon />
         </a>
+        <a href={SOCIALS.spotify} target="_blank" rel="noopener noreferrer" style={{ color: C.light }} aria-label="Spotify">
+          <SpotifyIcon />
+        </a>
       </div>
     </header>
   );
@@ -140,7 +148,7 @@ export function Header({ activePath }: { activePath?: string }) {
 
 export function EmailSignup() {
   return (
-    <section style={{ backgroundColor: C.bgAlt, padding: "64px 32px", textAlign: "center" }}>
+    <section style={{ backgroundColor: C.bgDeep, padding: "64px 32px", textAlign: "center", borderTop: `1px solid ${C.border}` }}>
       <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "12px" }}>
         Stay in the Loop
       </p>
@@ -157,7 +165,7 @@ export function EmailSignup() {
         style={{
           display: "inline-block",
           backgroundColor: C.accent,
-          color: "#1B2A1E",
+          color: "#FFFFFF",
           padding: "14px 40px",
           borderRadius: "999px",
           fontWeight: 700,
@@ -177,7 +185,7 @@ export function EmailSignup() {
 
 export function Footer() {
   return (
-    <footer style={{ backgroundColor: C.bg, padding: "40px 32px", textAlign: "center", borderTop: `1px solid ${C.border}` }}>
+    <footer style={{ backgroundColor: C.bgAlt, padding: "40px 32px", textAlign: "center", borderTop: `1px solid ${C.border}` }}>
       <div style={{ display: "flex", gap: "24px", justifyContent: "center", marginBottom: "16px" }}>
         <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" style={{ color: C.light }} aria-label="Instagram">
           <InstagramIcon />
@@ -188,8 +196,11 @@ export function Footer() {
         <a href={SOCIALS.youtube} target="_blank" rel="noopener noreferrer" style={{ color: C.light }} aria-label="YouTube">
           <YouTubeIcon />
         </a>
+        <a href={SOCIALS.spotify} target="_blank" rel="noopener noreferrer" style={{ color: C.light }} aria-label="Spotify">
+          <SpotifyIcon />
+        </a>
       </div>
-      <p style={{ color: C.light, fontSize: "0.75rem", letterSpacing: "0.1em" }}>© 2026 Chris Robinson</p>
+      <p style={{ color: C.light, fontSize: "0.75rem", letterSpacing: "0.1em" }}>© 2026 Chris Locke</p>
     </footer>
   );
 }

@@ -6,25 +6,39 @@ import { Header, Footer, EmailSignup, C } from "./_components/shared";
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 const UPCOMING_SHOWS = [
-  { date: "Thu, May 1, 2026", venue: "Brewery Bay", city: "Orillia, ON", note: "Sin Bin Comedy Show", ticketUrl: "https://www.eventbrite.ca/e/sin-bin-comedy-show-with-chris-robinson-at-brewery-bay-tickets-1984623026898", soldOut: false },
-  { date: "Thu, May 14, 2026", venue: "IDK Social Bar and Cafe", city: "Toronto, ON", note: "Block Party Vol. 11", ticketUrl: "https://www.eventbrite.ca/e/block-party-vol-11-thursday-may-14th-tickets-1985201000633", soldOut: false },
-  { date: "Thu, May 22, 2026", venue: "River Run Centre", city: "Guelph, ON", note: "Roll on the Floor ft. Keith Pedro & Chris Robinson", ticketUrl: "https://riverrun.ca/whats-on/roll-on-the-floor-ft-keith-pedro-chris-robinson/", soldOut: false },
-  { date: "Sat, Jun 13, 2026", venue: "East Street Cider Co. Taproom", city: "Goderich, ON", note: "Comedy Show at The Taproom", ticketUrl: "https://www.eaststreetcider.com/events-1/comedy-show-the-taproom-13", soldOut: false },
+  // BC Tour
+  { date: "Wed, Apr 22, 2026", venue: "OK Dope Comedy", city: "Smithers, BC", note: "", ticketUrl: "https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-smithers?variant_id=variant_019aefb3-56b8-7fb3-a731-3041f54fa079", soldOut: false },
+  { date: "Thu, Apr 23, 2026", venue: "OK Dope Comedy", city: "Terrace, BC", note: "", ticketUrl: "https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-terrace", soldOut: false },
+  { date: "Fri, Apr 24, 2026", venue: "OK Dope Comedy", city: "Terrace, BC", note: "", ticketUrl: "https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-terrace", soldOut: false },
+  { date: "Sat, Apr 25, 2026", venue: "OK Dope Comedy", city: "Kitimat, BC", note: "", ticketUrl: "https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-kitimat?variant_id=variant_019aefb6-c03e-7c3c-9e5a-6acbf6e85291", soldOut: false },
+  // Hell: A Stand-Up Comedy Show — recurring monthly at Comedy Bar
+  { date: "Wed, Apr 29, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, May 27, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Jun 24, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Jul 29, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Aug 26, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Sep 30, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Oct 28, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Nov 25, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Dec 30, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
 ];
 
-const UNRULY_PLATFORMS = [
-  { label: "Watch on YouTube", url: "https://youtu.be/qx9FlFITcvI" },
-  { label: "Spotify", url: "https://open.spotify.com/album/6Mx5Zi9KXjsm1IuyH5Iw8z" },
-  { label: "Apple Music", url: "https://music.apple.com/us/album/unruly/1840954802" },
-  { label: "YouTube Music", url: "https://music.youtube.com/playlist?list=OLAK5uy_lz1HMTSH8vDZD4KWovxv9_1Az_X7mPyDc" },
-  { label: "Amazon Music", url: "https://music.amazon.co.uk/albums/B0FRN7WD8V" },
+// Show first 5 on home page
+const HOME_SHOWS = UPCOMING_SHOWS.slice(0, 5);
+
+const TIKI_MADNESS_PLATFORMS = [
+  { label: "Watch on YouTube", url: "https://youtu.be/rXBHo63Iz0c" },
+  { label: "Spotify", url: "https://open.spotify.com/album/4nzs5kqnBYN0PivHPS91DA" },
+  { label: "Apple Music", url: "https://music.apple.com/us/album/tiki-madness/1876488088" },
+  { label: "Amazon Music", url: "https://music.amazon.ca/albums/B0GMQ8GK18" },
+  { label: "YouTube Music", url: "https://www.youtube.com/watch?v=RYD2kL-rCJY&list=OLAK5uy_mrfwtCgT2ibeo6Wjr4OuJR0-vR4JvPZfU" },
 ];
 
 // ─── FEATURED RELEASE ────────────────────────────────────────────────────────
 
 function FeaturedReleaseSection() {
   return (
-    <section style={{ backgroundColor: C.bgAlt, padding: "60px 32px" }}>
+    <section style={{ backgroundColor: C.bgWarm, padding: "60px 32px", borderBottom: `1px solid ${C.border}` }}>
       <p style={{ textAlign: "center", fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "32px" }}>
         New Comedy Special &amp; Album — Out Now
       </p>
@@ -40,13 +54,12 @@ function FeaturedReleaseSection() {
       >
         {/* LEFT: text + streaming buttons */}
         <div style={{ flex: "1 1 400px", display: "flex", flexDirection: "column", gap: "16px" }}>
-
           <h2 style={{ fontFamily: "var(--font-bebas), Impact, sans-serif", fontSize: "clamp(3rem, 6vw, 5rem)", letterSpacing: "0.05em", lineHeight: 1.0, margin: 0, color: C.text }}>
-            UNRULY
+            TIKI MADNESS
           </h2>
-          <p style={{ fontSize: "0.9rem", color: C.light, margin: 0 }}>2025 · Comedy Special &amp; Album</p>
+          <p style={{ fontSize: "0.9rem", color: C.light, margin: 0 }}>2026 · Comedy Special &amp; Album</p>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "8px" }}>
-            {UNRULY_PLATFORMS.map((btn) => (
+            {TIKI_MADNESS_PLATFORMS.map((btn) => (
               <a
                 key={btn.label}
                 href={btn.url}
@@ -61,7 +74,7 @@ function FeaturedReleaseSection() {
                   fontSize: "0.85rem",
                   textDecoration: "none",
                   letterSpacing: "0.05em",
-                  maxWidth: "400px",
+                  maxWidth: "320px",
                   width: "100%",
                 }}
               >
@@ -70,12 +83,12 @@ function FeaturedReleaseSection() {
             ))}
           </div>
         </div>
-        {/* RIGHT: image */}
-        <div className="image-col" style={{ flex: "1.3 1 420px", display: "flex", justifyContent: "center" }}>
+        {/* RIGHT: hero image */}
+        <div style={{ flex: "1.3 1 420px", display: "flex", justifyContent: "center" }}>
           <img
-            src="/images/unruly-hero.jpg"
-            alt="Unruly"
-            style={{ width: "100%", borderRadius: "12px", display: "block" }}
+            src="/images/hero.jpg"
+            alt="Chris Locke — Tiki Madness"
+            style={{ width: "100%", height: "auto", borderRadius: "12px", display: "block" }}
           />
         </div>
       </div>
@@ -87,12 +100,12 @@ function FeaturedReleaseSection() {
 
 function UpcomingShowsSection() {
   return (
-    <section style={{ backgroundColor: C.bg, padding: "80px 32px", borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}` }}>
+    <section style={{ backgroundColor: C.bg, padding: "80px 32px", borderBottom: `1px solid ${C.border}` }}>
       <h2 style={{ textAlign: "center", fontFamily: "var(--font-bebas), Impact, sans-serif", fontSize: "clamp(3rem, 6vw, 5rem)", letterSpacing: "0.2em", textTransform: "uppercase", color: C.text, marginBottom: "48px" }}>
         Upcoming Shows
       </h2>
       <div style={{ borderTop: `1px solid ${C.border}`, maxWidth: "900px", margin: "0 auto" }}>
-        {UPCOMING_SHOWS.map((show, i) => (
+        {HOME_SHOWS.map((show, i) => (
           <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 0", borderBottom: `1px solid ${C.border}`, gap: "16px" }}>
             <div style={{ flex: 2 }}>
               <span style={{ fontSize: "0.9rem", color: C.text, display: "block" }}>{show.date} — {show.venue}</span>
@@ -124,7 +137,7 @@ function UpcomingShowsSection() {
 
 function BookingSection() {
   return (
-    <section style={{ backgroundColor: C.bgWarm, padding: "80px 32px" }}>
+    <section style={{ backgroundColor: C.bgAlt, padding: "80px 32px", borderBottom: `1px solid ${C.border}` }}>
       <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
         <h2 style={{ fontFamily: "var(--font-bebas), Impact, sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "0.2em", textTransform: "uppercase", color: C.text, marginBottom: "12px" }}>
           Booking
@@ -134,15 +147,10 @@ function BookingSection() {
         </p>
         <div style={{ display: "flex", gap: "48px", justifyContent: "center", flexWrap: "wrap" }}>
           <div>
-            <p style={{ color: C.text, fontSize: "0.95rem", marginBottom: "4px" }}>Morgan Flood</p>
+            <p style={{ color: C.text, fontSize: "0.95rem", marginBottom: "4px" }}>Morgan Flood &amp; Carolyn Sterling</p>
+            <p style={{ color: C.light, fontSize: "0.85rem", marginBottom: "8px" }}>Canada</p>
             <a href="mailto:morgan@grandwaveentertainment.com" style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none" }}>
               morgan@grandwaveentertainment.com
-            </a>
-          </div>
-          <div>
-            <p style={{ color: C.text, fontSize: "0.95rem", marginBottom: "4px" }}>Carolyn Sterling</p>
-            <a href="mailto:carolyn@grandwaveentertainment.com" style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none" }}>
-              carolyn@grandwaveentertainment.com
             </a>
           </div>
         </div>

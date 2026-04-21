@@ -39,15 +39,33 @@ export async function setupDb() {
     )
   `;
 
+  // Awards table
+  await sql`
+    CREATE TABLE IF NOT EXISTS awards (
+      id TEXT PRIMARY KEY,
+      text TEXT NOT NULL,
+      sort_order INTEGER NOT NULL DEFAULT 0
+    )
+  `;
+
   // Seed shows if empty
   const showsCount = await sql`SELECT COUNT(*) FROM shows`;
   if (parseInt(showsCount.rows[0].count) === 0) {
     await sql`
       INSERT INTO shows (id, date, venue, city, ticket_url, sold_out) VALUES
-      ('1', 'Thu, May 1, 2026', 'Brewery Bay', 'Orillia, ON', 'https://www.eventbrite.ca/e/sin-bin-comedy-show-with-chris-robinson-at-brewery-bay-tickets-1984623026898', false),
-      ('2', 'Thu, May 14, 2026', 'IDK Social Bar and Cafe', 'Toronto, ON', 'https://www.eventbrite.ca/e/block-party-vol-11-thursday-may-14th-tickets-1985201000633', false),
-      ('3', 'Thu, May 22, 2026', 'River Run Centre', 'Guelph, ON', 'https://riverrun.ca/whats-on/roll-on-the-floor-ft-keith-pedro-chris-robinson/', false),
-      ('4', 'Sat, Jun 13, 2026', 'East Street Cider Co. Taproom', 'Goderich, ON', 'https://www.eaststreetcider.com/events-1/comedy-show-the-taproom-13', false)
+      ('s1',  'Wed, Apr 22, 2026', 'OK Dope Comedy', 'Smithers, BC',  'https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-smithers?variant_id=variant_019aefb3-56b8-7fb3-a731-3041f54fa079', false),
+      ('s2',  'Thu, Apr 23, 2026', 'OK Dope Comedy', 'Terrace, BC',   'https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-terrace', false),
+      ('s3',  'Fri, Apr 24, 2026', 'OK Dope Comedy', 'Terrace, BC',   'https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-terrace', false),
+      ('s4',  'Sat, Apr 25, 2026', 'OK Dope Comedy', 'Kitimat, BC',   'https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-kitimat?variant_id=variant_019aefb6-c03e-7c3c-9e5a-6acbf6e85291', false),
+      ('s5',  'Wed, Apr 29, 2026', 'Comedy Bar',     'Toronto, ON',   'https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke', false),
+      ('s6',  'Wed, May 27, 2026', 'Comedy Bar',     'Toronto, ON',   'https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke', false),
+      ('s7',  'Wed, Jun 24, 2026', 'Comedy Bar',     'Toronto, ON',   'https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke', false),
+      ('s8',  'Wed, Jul 29, 2026', 'Comedy Bar',     'Toronto, ON',   'https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke', false),
+      ('s9',  'Wed, Aug 26, 2026', 'Comedy Bar',     'Toronto, ON',   'https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke', false),
+      ('s10', 'Wed, Sep 30, 2026', 'Comedy Bar',     'Toronto, ON',   'https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke', false),
+      ('s11', 'Wed, Oct 28, 2026', 'Comedy Bar',     'Toronto, ON',   'https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke', false),
+      ('s12', 'Wed, Nov 25, 2026', 'Comedy Bar',     'Toronto, ON',   'https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke', false),
+      ('s13', 'Wed, Dec 30, 2026', 'Comedy Bar',     'Toronto, ON',   'https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke', false)
     `;
   }
 
@@ -56,24 +74,31 @@ export async function setupDb() {
   if (parseInt(releasesCount.rows[0].count) === 0) {
     await sql`
       INSERT INTO releases (id, title, year, type, youtube_url, spotify_url, apple_music_url, apple_tv_url, amazon_music_url, youtube_music_url) VALUES
-      ('r1', 'UNRULY', '2024', 'Comedy Special & Album',
-        'https://youtu.be/qx9FlFITcvI',
-        'https://open.spotify.com/album/6Mx5Zi9KXjsm1IuyH5Iw8z',
-        'https://music.apple.com/us/album/unruly/1840954802',
+      ('r1', 'TIKI MADNESS', '2026', 'Comedy Special & Album',
+        'https://youtu.be/rXBHo63Iz0c',
+        'https://open.spotify.com/album/4nzs5kqnBYN0PivHPS91DA',
+        'https://music.apple.com/us/album/tiki-madness/1876488088',
         NULL,
-        'https://music.amazon.co.uk/albums/B0FRN7WD8V',
-        'https://music.youtube.com/playlist?list=OLAK5uy_lz1HMTSH8vDZD4KWovxv9_1Az_X7mPyDc'),
-      ('r2', 'PANNING FOR GOLD', '2016', 'Comedy Special',
-        NULL, NULL, NULL,
-        'https://tv.apple.com/ca/show/chris-robinson-panning-for-gold/umc.cmc.2nnmodekj9k1buvxldca7l6fo',
-        NULL, NULL),
-      ('r3', 'GUT BUSSA', '2020', 'Comedy Album',
+        'https://music.amazon.ca/albums/B0GMQ8GK18',
+        'https://www.youtube.com/watch?v=RYD2kL-rCJY&list=OLAK5uy_mrfwtCgT2ibeo6Wjr4OuJR0-vR4JvPZfU'),
+      ('r2', 'CHRIS & SEAN ARE TONY AND KEITH IN HORROR!', '2020', 'Comedy Album',
         NULL,
-        'https://open.spotify.com/album/4PRmgqAZNmsq5Bb8r7TguT',
-        'https://music.apple.com/us/album/gut-bussa-vol-1/1510665105',
+        'https://open.spotify.com/artist/5nKDEO5biBXDNRNQ0iAW8Q',
+        'https://music.apple.com/search?term=chris+locke',
+        NULL, NULL,
+        'https://www.youtube.com/watch?v=IuMoknaY9d4&list=OLAK5uy_k1akxEbALCF7I1urjYBAwhYJiAtdJP7SI'),
+      ('r3', 'DEMONS ARE EATING MY HEAD', '2016', 'Comedy Album',
         NULL,
-        'https://music.amazon.ca/albums/B0882JR675',
-        'https://music.youtube.com/playlist?list=OLAK5uy_np-FyG18_LpRosOYC-STW_smSgvUaUrRk')
+        'https://open.spotify.com/artist/5nKDEO5biBXDNRNQ0iAW8Q',
+        'https://music.apple.com/search?term=chris+locke',
+        NULL, NULL,
+        'https://www.youtube.com/watch?v=Emyd-P0e60Q&list=OLAK5uy_kVv2YGgqAxfCGQuQh2PjmfkxKTKABj3go'),
+      ('r4', 'THE WORLD IS EMBARRASSING', '2014', 'Comedy Album',
+        NULL,
+        'https://open.spotify.com/artist/5nKDEO5biBXDNRNQ0iAW8Q',
+        'https://music.apple.com/search?term=chris+locke',
+        NULL, NULL,
+        'https://www.youtube.com/watch?v=58rkCKkvHOU&list=OLAK5uy_m8d2WKmXplw9-Gp2hP0Q5RYKouQA9TYWE')
     `;
   }
 
@@ -83,8 +108,19 @@ export async function setupDb() {
     await sql`
       INSERT INTO bio (id, text) VALUES (
         'main',
-        'Chris Robinson is one of the premier comics working in Canada today. He made a name for himself with multiple appearances at the Just For Laughs Comedy Festival in Montreal, winning Sirius XM''s Top Comic honours in 2016 taking home the $25,000 grand prize, and shooting his special ''Panning for Gold'' which can be seen on AppleTV.\n\nChris has since released a follow up special ''Unruly'' which can be streamed on Youtube. As an actor Chris has appeared in Workin'' Moms, Tallboyz, The Amazing Gayle Pile, Kids in the Hall, he''s a lead on the Crave series Pillow Talk, and plays a recurring role on the new CBC comedy One More Time.'
+        'Chris Locke is an award-winning and critically acclaimed comedian, actor and writer hailing from Toronto, Canada. Described by Vice as "One of Canada''s most staggeringly original comedians," Chris is a Canadian Comedy Award winner who regularly headlines clubs, theatres, and festivals.\n\nChris had a recurring role on RUN THE BURBS (CBC), and a recurring role on the upcoming show SLO PITCH (CRAVE). He has appeared in the Emmy Award winning CBC series WORKIN'' MOMS, WHAT WE DO IN THE SHADOWS (FX/Hulu), MRS. AMERICA (FX), UMBRELLA ACADEMY (Netflix). Chris starred in the critically acclaimed feature film WHO''S YER FATHER? for which he was nominated for a Canadian Screen Award. This Spring (2026), Chris will again be filming a starring role in a feature film, HI, MY NAME''S MIKE!, shooting in London, Ontario.\n\nChris is also the creator, writer, and star of his own series LEARNING NATURE (Funny or Die) and has appeared in several sketch comedy series including KIDS IN THE HALL (Amazon), BARONESS VON SKETCH SHOW (CBC), and TALLBOYZ (CBC). He is a co-host of the podcast Evil Men. As a stand-up comic he has performed at the prestigious Just For Laughs comedy festival in Montreal, the Winnipeg Comedy Festival, and Just for Laughs Toronto.\n\nCurrently, you can see Chris'' stand-up comedy special CAPTAIN BONES on Crave, and his brand new special TIKI MADNESS on YouTube (Macaw Studios).'
       )
+    `;
+  }
+
+  // Seed awards if empty
+  const awardsCount = await sql`SELECT COUNT(*) FROM awards`;
+  if (parseInt(awardsCount.rows[0].count) === 0) {
+    await sql`
+      INSERT INTO awards (id, text, sort_order) VALUES
+      ('a1', 'Canadian Comedy Award Winner', 1),
+      ('a2', 'Canadian Screen Award Nominee — WHO''S YER FATHER?', 2),
+      ('a3', 'Described by Vice as "One of Canada''s most staggeringly original comedians"', 3)
     `;
   }
 }
@@ -115,4 +151,10 @@ export interface Release {
 
 export interface Bio {
   text: string;
+}
+
+export interface Award {
+  id: string;
+  text: string;
+  sortOrder: number;
 }

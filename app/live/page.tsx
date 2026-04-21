@@ -3,36 +3,110 @@
 import { Header, Footer, C, EmailSignup } from "../_components/shared";
 
 const UPCOMING_SHOWS = [
+  // BC Tour
   {
-    date: "Thu, May 1, 2026",
-    venue: "Brewery Bay",
-    city: "Orillia, ON",
-    note: "Sin Bin Comedy Show",
-    ticketUrl: "https://www.eventbrite.ca/e/sin-bin-comedy-show-with-chris-robinson-at-brewery-bay-tickets-1984623026898",
+    date: "Wed, Apr 22, 2026",
+    venue: "OK Dope Comedy",
+    city: "Smithers, BC",
+    note: "",
+    ticketUrl: "https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-smithers?variant_id=variant_019aefb3-56b8-7fb3-a731-3041f54fa079",
     soldOut: false,
   },
   {
-    date: "Thu, May 14, 2026",
-    venue: "IDK Social Bar and Cafe",
+    date: "Thu, Apr 23, 2026",
+    venue: "OK Dope Comedy",
+    city: "Terrace, BC",
+    note: "",
+    ticketUrl: "https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-terrace",
+    soldOut: false,
+  },
+  {
+    date: "Fri, Apr 24, 2026",
+    venue: "OK Dope Comedy",
+    city: "Terrace, BC",
+    note: "",
+    ticketUrl: "https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-terrace",
+    soldOut: false,
+  },
+  {
+    date: "Sat, Apr 25, 2026",
+    venue: "OK Dope Comedy",
+    city: "Kitimat, BC",
+    note: "",
+    ticketUrl: "https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-kitimat?variant_id=variant_019aefb6-c03e-7c3c-9e5a-6acbf6e85291",
+    soldOut: false,
+  },
+  // Hell: A Stand-Up Comedy Show — last Wednesday of every month at Comedy Bar
+  {
+    date: "Wed, Apr 29, 2026",
+    venue: "Comedy Bar",
     city: "Toronto, ON",
-    note: "Block Party Vol. 11",
-    ticketUrl: "https://www.eventbrite.ca/e/block-party-vol-11-thursday-may-14th-tickets-1985201000633",
+    note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25 GA · 945 Bloor St W",
+    ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke",
     soldOut: false,
   },
   {
-    date: "Thu, May 22, 2026",
-    venue: "River Run Centre",
-    city: "Guelph, ON",
-    note: "Roll on the Floor ft. Keith Pedro & Chris Robinson",
-    ticketUrl: "https://riverrun.ca/whats-on/roll-on-the-floor-ft-keith-pedro-chris-robinson/",
+    date: "Wed, May 27, 2026",
+    venue: "Comedy Bar",
+    city: "Toronto, ON",
+    note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25 GA · 945 Bloor St W",
+    ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke",
     soldOut: false,
   },
   {
-    date: "Sat, Jun 13, 2026",
-    venue: "East Street Cider Co. Taproom",
-    city: "Goderich, ON",
-    note: "Comedy Show at The Taproom",
-    ticketUrl: "https://www.eaststreetcider.com/events-1/comedy-show-the-taproom-13",
+    date: "Wed, Jun 24, 2026",
+    venue: "Comedy Bar",
+    city: "Toronto, ON",
+    note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25 GA · 945 Bloor St W",
+    ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke",
+    soldOut: false,
+  },
+  {
+    date: "Wed, Jul 29, 2026",
+    venue: "Comedy Bar",
+    city: "Toronto, ON",
+    note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25 GA · 945 Bloor St W",
+    ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke",
+    soldOut: false,
+  },
+  {
+    date: "Wed, Aug 26, 2026",
+    venue: "Comedy Bar",
+    city: "Toronto, ON",
+    note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25 GA · 945 Bloor St W",
+    ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke",
+    soldOut: false,
+  },
+  {
+    date: "Wed, Sep 30, 2026",
+    venue: "Comedy Bar",
+    city: "Toronto, ON",
+    note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25 GA · 945 Bloor St W",
+    ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke",
+    soldOut: false,
+  },
+  {
+    date: "Wed, Oct 28, 2026",
+    venue: "Comedy Bar",
+    city: "Toronto, ON",
+    note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25 GA · 945 Bloor St W",
+    ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke",
+    soldOut: false,
+  },
+  {
+    date: "Wed, Nov 25, 2026",
+    venue: "Comedy Bar",
+    city: "Toronto, ON",
+    note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25 GA · 945 Bloor St W",
+    ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke",
+    soldOut: false,
+  },
+  {
+    date: "Wed, Dec 30, 2026",
+    venue: "Comedy Bar",
+    city: "Toronto, ON",
+    note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25 GA · 945 Bloor St W",
+    ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke",
     soldOut: false,
   },
 ];
@@ -47,18 +121,11 @@ export default function LivePage() {
           style={{
             padding: "60px 32px 40px",
             textAlign: "center",
+            backgroundColor: C.bgAlt,
             borderBottom: `1px solid ${C.border}`,
           }}
         >
-          <p
-            style={{
-              fontSize: "0.7rem",
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-              color: C.accent,
-              marginBottom: "12px",
-            }}
-          >
+          <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "12px" }}>
             On Tour
           </p>
           <h1
@@ -77,16 +144,7 @@ export default function LivePage() {
 
         {/* Upcoming shows */}
         <div style={{ maxWidth: "900px", margin: "0 auto", padding: "64px 32px 32px" }}>
-          <h2
-            style={{
-              fontSize: "0.75rem",
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: C.light,
-              marginBottom: "24px",
-              fontWeight: 400,
-            }}
-          >
+          <h2 style={{ fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.light, marginBottom: "24px", fontWeight: 400 }}>
             Upcoming
           </h2>
           <div style={{ borderTop: `1px solid ${C.border}` }}>
@@ -143,14 +201,7 @@ export default function LivePage() {
         </div>
 
         {/* Booking CTA */}
-        <div
-          style={{
-            maxWidth: "900px",
-            margin: "0 auto",
-            padding: "32px 32px 80px",
-            textAlign: "center",
-          }}
-        >
+        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "32px 32px 80px", textAlign: "center" }}>
           <p style={{ color: C.light, fontSize: "0.9rem", marginBottom: "8px" }}>
             Interested in booking Chris for your event?
           </p>

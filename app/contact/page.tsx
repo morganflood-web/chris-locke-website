@@ -12,18 +12,11 @@ export default function ContactPage() {
           style={{
             padding: "60px 32px 40px",
             textAlign: "center",
+            backgroundColor: C.bgAlt,
             borderBottom: `1px solid ${C.border}`,
           }}
         >
-          <p
-            style={{
-              fontSize: "0.7rem",
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-              color: C.accent,
-              marginBottom: "12px",
-            }}
-          >
+          <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "12px" }}>
             Get in Touch
           </p>
           <h1
@@ -41,14 +34,7 @@ export default function ContactPage() {
         </div>
 
         {/* Booking info */}
-        <div
-          style={{
-            maxWidth: "700px",
-            margin: "0 auto",
-            padding: "80px 32px",
-            textAlign: "center",
-          }}
-        >
+        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "80px 32px", textAlign: "center" }}>
           <div
             style={{
               backgroundColor: C.bgAlt,
@@ -57,15 +43,7 @@ export default function ContactPage() {
               padding: "48px 40px",
             }}
           >
-            <p
-              style={{
-                fontSize: "0.7rem",
-                letterSpacing: "0.3em",
-                textTransform: "uppercase",
-                color: C.light,
-                marginBottom: "8px",
-              }}
-            >
+            <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.light, marginBottom: "8px" }}>
               Represented by
             </p>
             <h2
@@ -80,29 +58,15 @@ export default function ContactPage() {
               Grand Wave Entertainment
             </h2>
 
-            <div
-              style={{
-                display: "flex",
-                gap: "48px",
-                justifyContent: "center",
-                flexWrap: "wrap",
-              }}
-            >
-              {/* Morgan */}
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "4px",
-                  alignItems: "center",
-                }}
-              >
+            <div style={{ display: "flex", gap: "48px", justifyContent: "center", flexWrap: "wrap" }}>
+              {/* Canada */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "4px", alignItems: "center" }}>
                 <div
                   style={{
                     width: "48px",
                     height: "48px",
                     borderRadius: "50%",
-                    backgroundColor: C.mid,
+                    backgroundColor: C.bgDeep,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -113,77 +77,20 @@ export default function ContactPage() {
                     letterSpacing: "0.05em",
                   }}
                 >
-                  MF
+                  GW
                 </div>
-                <p style={{ color: C.text, fontSize: "1rem", fontWeight: 600 }}>Morgan Flood</p>
+                <p style={{ color: C.light, fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "4px" }}>Canada</p>
+                <p style={{ color: C.text, fontSize: "1rem", fontWeight: 600, marginBottom: "4px" }}>Morgan Flood &amp; Carolyn Sterling</p>
                 <a
                   href="mailto:morgan@grandwaveentertainment.com"
-                  style={{
-                    color: C.accent,
-                    fontSize: "0.85rem",
-                    textDecoration: "none",
-                    borderBottom: `1px solid transparent`,
-                  }}
-                  onMouseOver={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = C.accent;
-                  }}
-                  onMouseOut={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = "transparent";
-                  }}
+                  style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none" }}
+                  onMouseOver={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "underline"; }}
+                  onMouseOut={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "none"; }}
                 >
                   morgan@grandwaveentertainment.com
                 </a>
               </div>
-
-              {/* Carolyn */}
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "4px",
-                  alignItems: "center",
-                }}
-              >
-                <div
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    borderRadius: "50%",
-                    backgroundColor: C.mid,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginBottom: "12px",
-                    fontSize: "1.1rem",
-                    color: C.accent,
-                    fontFamily: "var(--font-bebas), Impact, sans-serif",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  CS
-                </div>
-                <p style={{ color: C.text, fontSize: "1rem", fontWeight: 600 }}>Carolyn Sterling</p>
-                <a
-                  href="mailto:carolyn@grandwaveentertainment.com"
-                  style={{
-                    color: C.accent,
-                    fontSize: "0.85rem",
-                    textDecoration: "none",
-                    borderBottom: `1px solid transparent`,
-                  }}
-                  onMouseOver={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = C.accent;
-                  }}
-                  onMouseOut={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = "transparent";
-                  }}
-                >
-                  carolyn@grandwaveentertainment.com
-                </a>
-              </div>
             </div>
-
-
           </div>
         </div>
       </main>
