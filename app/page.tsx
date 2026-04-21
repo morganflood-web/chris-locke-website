@@ -12,15 +12,15 @@ const UPCOMING_SHOWS = [
   { date: "Fri, Apr 24, 2026", venue: "OK Dope Comedy", city: "Terrace, BC", note: "", ticketUrl: "https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-terrace", soldOut: false },
   { date: "Sat, Apr 25, 2026", venue: "OK Dope Comedy", city: "Kitimat, BC", note: "", ticketUrl: "https://www.jumpcomedy.com/e/ok-dope-presents-stand-up-comedy-live-in-kitimat?variant_id=variant_019aefb6-c03e-7c3c-9e5a-6acbf6e85291", soldOut: false },
   // Hell: A Stand-Up Comedy Show — recurring monthly at Comedy Bar
-  { date: "Wed, Apr 29, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
-  { date: "Wed, May 27, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
-  { date: "Wed, Jun 24, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
-  { date: "Wed, Jul 29, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
-  { date: "Wed, Aug 26, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
-  { date: "Wed, Sep 30, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
-  { date: "Wed, Oct 28, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
-  { date: "Wed, Nov 25, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
-  { date: "Wed, Dec 30, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show — 9:30 PM · $25", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Apr 29, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, May 27, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Jun 24, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Jul 29, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Aug 26, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Sep 30, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Oct 28, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Nov 25, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
+  { date: "Wed, Dec 30, 2026", venue: "Comedy Bar", city: "Toronto, ON", note: "Hell: A Stand-Up Comedy Show", ticketUrl: "https://comedybar.ca/shows/hell-a-stand-up-comedy-show-hosted-by-chris-locke", soldOut: false },
 ];
 
 // Show first 5 on home page
@@ -38,7 +38,7 @@ const TIKI_MADNESS_PLATFORMS = [
 
 function FeaturedReleaseSection() {
   return (
-    <section style={{ backgroundColor: C.bgWarm, padding: "60px 32px", borderBottom: `1px solid ${C.border}` }}>
+    <section style={{ backgroundColor: C.bgAlt, padding: "60px 32px", borderBottom: `1px solid ${C.border}` }}>
       <p style={{ textAlign: "center", fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "32px" }}>
         New Comedy Special &amp; Album — Out Now
       </p>
@@ -74,7 +74,7 @@ function FeaturedReleaseSection() {
                   fontSize: "0.85rem",
                   textDecoration: "none",
                   letterSpacing: "0.05em",
-                  maxWidth: "320px",
+                  maxWidth: "400px",
                   width: "100%",
                 }}
               >
@@ -149,8 +149,11 @@ function BookingSection() {
           <div>
             <p style={{ color: C.text, fontSize: "0.95rem", marginBottom: "4px" }}>Morgan Flood &amp; Carolyn Sterling</p>
             <p style={{ color: C.light, fontSize: "0.85rem", marginBottom: "8px" }}>Canada</p>
-            <a href="mailto:morgan@grandwaveentertainment.com" style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none" }}>
+            <a href="mailto:morgan@grandwaveentertainment.com" style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none", display: "block" }}>
               morgan@grandwaveentertainment.com
+            </a>
+            <a href="mailto:carolyn@grandwaveentertainment.com" style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none", display: "block", marginTop: "4px" }}>
+              carolyn@grandwaveentertainment.com
             </a>
           </div>
         </div>

@@ -259,7 +259,7 @@ export default function ReleasesPage() {
                 }}
               >
                 {/* Left: podcast artwork */}
-                <div style={{ flex: "0 0 180px", maxWidth: "200px", alignSelf: "flex-start" }}>
+                <div style={{ flex: "0 0 240px", maxWidth: "280px", alignSelf: "flex-start" }}>
                   <img
                     src={podcast.artworkFile}
                     alt={podcast.title}

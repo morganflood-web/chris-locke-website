@@ -136,9 +136,6 @@ export function Header({ activePath }: { activePath?: string }) {
         <a href={SOCIALS.youtube} target="_blank" rel="noopener noreferrer" style={{ color: C.light }} aria-label="YouTube">
           <YouTubeIcon />
         </a>
-        <a href={SOCIALS.spotify} target="_blank" rel="noopener noreferrer" style={{ color: C.light }} aria-label="Spotify">
-          <SpotifyIcon />
-        </a>
       </div>
     </header>
   );
@@ -195,9 +192,6 @@ export function Footer() {
         </a>
         <a href={SOCIALS.youtube} target="_blank" rel="noopener noreferrer" style={{ color: C.light }} aria-label="YouTube">
           <YouTubeIcon />
-        </a>
-        <a href={SOCIALS.spotify} target="_blank" rel="noopener noreferrer" style={{ color: C.light }} aria-label="Spotify">
-          <SpotifyIcon />
         </a>
       </div>
       <p style={{ color: C.light, fontSize: "0.75rem", letterSpacing: "0.1em" }}>© 2026 Chris Locke</p>

@@ -83,11 +83,19 @@ export default function ContactPage() {
                 <p style={{ color: C.text, fontSize: "1rem", fontWeight: 600, marginBottom: "4px" }}>Morgan Flood &amp; Carolyn Sterling</p>
                 <a
                   href="mailto:morgan@grandwaveentertainment.com"
-                  style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none" }}
+                  style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none", display: "block" }}
                   onMouseOver={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "underline"; }}
                   onMouseOut={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "none"; }}
                 >
                   morgan@grandwaveentertainment.com
+                </a>
+                <a
+                  href="mailto:carolyn@grandwaveentertainment.com"
+                  style={{ color: C.accent, fontSize: "0.85rem", textDecoration: "none", display: "block", marginTop: "4px" }}
+                  onMouseOver={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "underline"; }}
+                  onMouseOut={(e) => { (e.currentTarget as HTMLAnchorElement).style.textDecoration = "none"; }}
+                >
+                  carolyn@grandwaveentertainment.com
                 </a>
               </div>
             </div>
