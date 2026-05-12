@@ -253,9 +253,21 @@ export default function ReleasesPage() {
         {/* Podcasts */}
         <div style={{ backgroundColor: C.bgWarm, borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}` }}>
           <div style={{ maxWidth: "900px", margin: "0 auto", padding: "64px 32px" }}>
-            <p style={{ fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.light, marginBottom: "40px", fontWeight: 400 }}>
+            <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "12px" }}>
               Podcasts
             </p>
+            <h2
+              style={{
+                fontFamily: "var(--font-bebas), Impact, sans-serif",
+                fontSize: "clamp(2.5rem, 6vw, 5rem)",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: C.text,
+                margin: "0 0 40px",
+              }}
+            >
+              Podcasts
+            </h2>
             {PODCASTS.map((podcast, idx) => (
               <div
                 key={podcast.id}
