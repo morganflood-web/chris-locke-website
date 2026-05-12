@@ -253,7 +253,7 @@ export default function ReleasesPage() {
         {/* Podcasts */}
         <div style={{ backgroundColor: C.bgWarm, borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}` }}>
           <div style={{ maxWidth: "900px", margin: "0 auto", padding: "64px 32px" }}>
-            <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "12px" }}>
+            <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "12px", textAlign: "center" }}>
               Podcasts
             </p>
             <h2
@@ -264,6 +264,7 @@ export default function ReleasesPage() {
                 textTransform: "uppercase",
                 color: C.text,
                 margin: "0 0 40px",
+                textAlign: "center",
               }}
             >
               Podcasts
