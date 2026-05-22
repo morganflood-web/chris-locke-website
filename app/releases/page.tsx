@@ -131,7 +131,7 @@ return (
             >
               {/* Left: album art */}
               <div style={{ flex: "0 0 240px", maxWidth: "280px", alignSelf: "flex-start" }}>
-                <AlbumPlaceholder id={release.id} title={release.title} artworkFile={release.artworkFile} />
+                <AlbumPlaceholder id={release.id} title={release.title} artworkFile={release.coverImage} />
               </div>
 
               {/* Right: info + platform buttons */}
