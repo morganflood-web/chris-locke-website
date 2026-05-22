@@ -1,7 +1,75 @@
-import { Header, Footer, C, EmailSignup } from "../_components/shared";
-import { getReleases } from "@/lib/data";
+"use client";
 
-export const dynamic = "force-dynamic";
+import { Header, Footer, C, EmailSignup } from "../_components/shared";
+
+const RELEASES = [
+  {
+    id: "tiki-madness",
+    title: "TIKI MADNESS",
+    year: "2026",
+    type: "Comedy Special & Album",
+    description: "Brand new comedy special and album. Out now on YouTube via Macaw Studios.",
+    platforms: [
+      { label: "Watch on YouTube", url: "https://youtu.be/rXBHo63Iz0c" },
+      { label: "Spotify", url: "https://open.spotify.com/album/4nzs5kqnBYN0PivHPS91DA" },
+      { label: "Apple Music", url: "https://music.apple.com/us/album/tiki-madness/1876488088" },
+      { label: "Amazon Music", url: "https://music.amazon.ca/albums/B0GMQ8GK18" },
+      { label: "YouTube Music", url: "https://www.youtube.com/watch?v=RYD2kL-rCJY&list=OLAK5uy_mrfwtCgT2ibeo6Wjr4OuJR0-vR4JvPZfU" },
+    ],
+    artworkFile: "/images/tiki-madness.jpg",
+  },
+  {
+    id: "captain-bones",
+    title: "CAPTAIN BONES",
+    year: "2022",
+    type: "Comedy Special",
+    description: "Chris Locke's critically acclaimed stand-up special. Originally premiered on Crave.",
+    platforms: [
+      { label: "Watch on Apple TV", url: "https://tv.apple.com/ca/show/chris-locke-captain-bones/umc.cmc.qqhl7459pcvgs4bz7ne5s7h7" },
+      { label: "Watch on Prime Video", url: "https://www.primevideo.com/detail/Chris-Locke-Captain-Bones/0JQLOJNNHH18BV5GDWKDQ20BPP" },
+    ],
+    artworkFile: "/images/captain-bones.jpg",
+  },
+  {
+    id: "chris-and-sean",
+    title: "CHRIS & SEAN ARE TONY AND KEITH IN HORROR!",
+    year: "2020",
+    type: "Comedy Album",
+    description: "A comedy album collaboration.",
+    platforms: [
+      { label: "YouTube Music", url: "https://www.youtube.com/watch?v=IuMoknaY9d4&list=OLAK5uy_k1akxEbALCF7I1urjYBAwhYJiAtdJP7SI" },
+      { label: "Spotify", url: "https://open.spotify.com/artist/5nKDEO5biBXDNRNQ0iAW8Q" },
+      { label: "Apple Music", url: "https://music.apple.com/search?term=chris+locke" },
+    ],
+    artworkFile: "/images/chris-and-sean.jpg",
+  },
+  {
+    id: "demons",
+    title: "DEMONS ARE EATING MY HEAD",
+    year: "2016",
+    type: "Comedy Album",
+    description: "Comedy album.",
+    platforms: [
+      { label: "YouTube Music", url: "https://www.youtube.com/watch?v=Emyd-P0e60Q&list=OLAK5uy_kVv2YGgqAxfCGQuQh2PjmfkxKTKABj3go" },
+      { label: "Spotify", url: "https://open.spotify.com/artist/5nKDEO5biBXDNRNQ0iAW8Q" },
+      { label: "Apple Music", url: "https://music.apple.com/search?term=chris+locke" },
+    ],
+    artworkFile: "/images/demons.jpg",
+  },
+  {
+    id: "world-embarrassing",
+    title: "THE WORLD IS EMBARRASSING",
+    year: "2014",
+    type: "Comedy Album",
+    description: "Debut comedy album.",
+    platforms: [
+      { label: "YouTube Music", url: "https://www.youtube.com/watch?v=58rkCKkvHOU&list=OLAK5uy_m8d2WKmXplw9-Gp2hP0Q5RYKouQA9TYWE" },
+      { label: "Spotify", url: "https://open.spotify.com/artist/5nKDEO5biBXDNRNQ0iAW8Q" },
+      { label: "Apple Music", url: "https://music.apple.com/search?term=chris+locke" },
+    ],
+    artworkFile: "/images/world-embarrassing.jpg",
+  },
+];
 
 const PODCASTS = [
   {
@@ -37,7 +105,7 @@ const PODCASTS = [
 ];
 
 function AlbumPlaceholder({ id, title, artworkFile }: { id: string; title: string; artworkFile: string | null }) {
-  if (artworkFile && !artworkFile.includes("placeholder")) {
+  if (artworkFile) {
     return (
       <img
         src={artworkFile}
@@ -75,13 +143,14 @@ function AlbumPlaceholder({ id, title, artworkFile }: { id: string; title: strin
   );
 }
 
-export default async function ReleasesPage() {
-  const releases = await getReleases();
 
+
+export default function ReleasesPage() {
   return (
     <>
       <Header activePath="/releases" />
       <main style={{ backgroundColor: C.bg, minHeight: "80vh" }}>
+        {/* Page header */}
         <div
           style={{
             padding: "60px 32px 40px",
@@ -107,11 +176,12 @@ export default async function ReleasesPage() {
           </h1>
         </div>
 
+        {/* Albums & Specials */}
         <div style={{ maxWidth: "900px", margin: "0 auto", padding: "64px 32px 0" }}>
           <p style={{ fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.light, marginBottom: "32px", fontWeight: 400 }}>
             Specials &amp; Albums
           </p>
-          {releases.map((release, idx) => (
+          {RELEASES.map((release, idx) => (
             <div
               key={release.id}
               style={{
@@ -119,18 +189,21 @@ export default async function ReleasesPage() {
                 flexDirection: "row",
                 gap: "40px",
                 alignItems: "flex-start",
-                marginBottom: idx < releases.length - 1 ? "80px" : "64px",
+                marginBottom: idx < RELEASES.length - 1 ? "80px" : "64px",
                 flexWrap: "wrap",
-                paddingBottom: idx < releases.length - 1 ? "80px" : 0,
-                borderBottom: idx < releases.length - 1 ? `1px solid ${C.border}` : "none",
+                paddingBottom: idx < RELEASES.length - 1 ? "80px" : 0,
+                borderBottom: idx < RELEASES.length - 1 ? `1px solid ${C.border}` : "none",
               }}
             >
+              {/* Left: album art */}
               <div style={{ flex: "0 0 240px", maxWidth: "280px", alignSelf: "flex-start" }}>
-                <AlbumPlaceholder id={release.id} title={release.title} artworkFile={release.coverImage} />
+                <AlbumPlaceholder id={release.id} title={release.title} artworkFile={release.artworkFile} />
               </div>
+
+              {/* Right: info + platform buttons */}
               <div style={{ flex: "1 1 260px", display: "flex", flexDirection: "column", gap: "12px", alignSelf: "flex-start" }}>
                 <p style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.light, margin: 0 }}>
-                  {release.year}
+                  {release.type} · {release.year}
                 </p>
                 <h2
                   style={{
@@ -145,8 +218,8 @@ export default async function ReleasesPage() {
                 >
                   {release.title}
                 </h2>
-                {release.awardText && (
-                  <p style={{ color: C.light, fontSize: "0.85rem", margin: 0 }}>{release.awardText}</p>
+                {release.description && (
+                  <p style={{ color: C.light, fontSize: "0.9rem", margin: 0, lineHeight: 1.6 }}>{release.description}</p>
                 )}
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "8px" }}>
                   {release.platforms.map((btn) => (
@@ -177,6 +250,7 @@ export default async function ReleasesPage() {
           ))}
         </div>
 
+        {/* Podcasts */}
         <div style={{ backgroundColor: C.bgWarm, borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}` }}>
           <div style={{ maxWidth: "900px", margin: "0 auto", padding: "64px 32px" }}>
             <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "12px", textAlign: "center" }}>
@@ -209,6 +283,7 @@ export default async function ReleasesPage() {
                   borderBottom: idx < PODCASTS.length - 1 ? `1px solid ${C.border}` : "none",
                 }}
               >
+                {/* Left: podcast artwork */}
                 <div style={{ flex: "0 0 240px", maxWidth: "280px", alignSelf: "flex-start" }}>
                   <img
                     src={podcast.artworkFile}
@@ -216,6 +291,8 @@ export default async function ReleasesPage() {
                     style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }}
                   />
                 </div>
+
+                {/* Right: info + link */}
                 <div style={{ flex: "1 1 260px", display: "flex", flexDirection: "column", gap: "12px", alignSelf: "flex-start" }}>
                   <p style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.light, margin: 0 }}>
                     {podcast.type}
