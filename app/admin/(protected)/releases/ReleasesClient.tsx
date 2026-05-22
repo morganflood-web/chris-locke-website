@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { s, inputStyle, btnStyle, dangerBtnStyle, secondaryBtnStyle } from '../../adminStyles';
+import { s, inputStyle, btnStyle, dangerBtnStyle, secondaryBtnStyle } from '../adminStyles';
 import type { PlatformLink } from '@/lib/db';
 
 interface Release {
   id: string;
   title: string;
-  year: number;
+  year: string;
   awardText: string | null;
   coverImage: string;
   platforms: PlatformLink[];
@@ -167,7 +167,7 @@ function ReleaseForm({
       </div>
       <div>
         <label style={s.label}>Year</label>
-        <input name="year" type="number" placeholder="2025" defaultValue={defaultValues?.year} required style={inputStyle} />
+        <input name="year" type="text" placeholder="2025" defaultValue={defaultValues?.year} required style={inputStyle} />
       </div>
       <div>
         <label style={s.label}>Sort Order</label>
