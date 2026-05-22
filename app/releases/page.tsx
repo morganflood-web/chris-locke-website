@@ -3,9 +3,41 @@ import { getReleases } from "@/lib/data";
 
 export const dynamic = "force-dynamic";
 
+const PODCASTS = [
+  {
+    id: "evil-men",
+    title: "EVIL MEN",
+    type: "Podcast",
+    description: "Co-hosted by Chris Locke on The Sonar Network.",
+    artworkFile: "/images/podcast-evil-men.jpg",
+    platforms: [
+      { label: "Listen on The Sonar Network", url: "https://thesonarnetwork.com/evil-men/" },
+    ],
+  },
+  {
+    id: "happy-good",
+    title: "HAPPY GOOD WITH CHRIS LOCKE",
+    type: "Podcast",
+    description: "Chris Locke's podcast on The Sonar Network.",
+    artworkFile: "/images/podcast-happy-good.jpg",
+    platforms: [
+      { label: "Listen on The Sonar Network", url: "https://thesonarnetwork.com/happy-good-with-chris-locke/" },
+    ],
+  },
+  {
+    id: "utopia-to-me",
+    title: "UTOPIA TO ME WITH CHRIS LOCKE",
+    type: "Podcast",
+    description: "Chris Locke's podcast on The Sonar Network.",
+    artworkFile: "/images/podcast-utopia-to-me.jpg",
+    platforms: [
+      { label: "Listen on The Sonar Network", url: "https://thesonarnetwork.com/utopia-to-me-with-chris-locke/" },
+    ],
+  },
+];
 
 function AlbumPlaceholder({ id, title, artworkFile }: { id: string; title: string; artworkFile: string | null }) {
-  if (artworkFile) {
+  if (artworkFile && !artworkFile.includes("placeholder")) {
     return (
       <img
         src={artworkFile}
@@ -43,8 +75,6 @@ function AlbumPlaceholder({ id, title, artworkFile }: { id: string; title: strin
   );
 }
 
-
-
 export default async function ReleasesPage() {
   const releases = await getReleases();
 
@@ -52,7 +82,6 @@ export default async function ReleasesPage() {
     <>
       <Header activePath="/releases" />
       <main style={{ backgroundColor: C.bg, minHeight: "80vh" }}>
-        {/* Page header */}
         <div
           style={{
             padding: "60px 32px 40px",
@@ -78,7 +107,6 @@ export default async function ReleasesPage() {
           </h1>
         </div>
 
-        {/* Albums & Specials */}
         <div style={{ maxWidth: "900px", margin: "0 auto", padding: "64px 32px 0" }}>
           <p style={{ fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.light, marginBottom: "32px", fontWeight: 400 }}>
             Specials &amp; Albums
@@ -97,15 +125,12 @@ export default async function ReleasesPage() {
                 borderBottom: idx < releases.length - 1 ? `1px solid ${C.border}` : "none",
               }}
             >
-              {/* Left: album art */}
               <div style={{ flex: "0 0 240px", maxWidth: "280px", alignSelf: "flex-start" }}>
                 <AlbumPlaceholder id={release.id} title={release.title} artworkFile={release.coverImage} />
               </div>
-
-              {/* Right: info + platform buttons */}
               <div style={{ flex: "1 1 260px", display: "flex", flexDirection: "column", gap: "12px", alignSelf: "flex-start" }}>
                 <p style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.light, margin: 0 }}>
-                  {release.type} · {release.year}
+                  {release.year}
                 </p>
                 <h2
                   style={{
@@ -120,8 +145,8 @@ export default async function ReleasesPage() {
                 >
                   {release.title}
                 </h2>
-                {release.description && (
-                  <p style={{ color: C.light, fontSize: "0.9rem", margin: 0, lineHeight: 1.6 }}>{release.description}</p>
+                {release.awardText && (
+                  <p style={{ color: C.light, fontSize: "0.85rem", margin: 0 }}>{release.awardText}</p>
                 )}
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "8px" }}>
                   {release.platforms.map((btn) => (
@@ -152,7 +177,6 @@ export default async function ReleasesPage() {
           ))}
         </div>
 
-        {/* Podcasts */}
         <div style={{ backgroundColor: C.bgWarm, borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}` }}>
           <div style={{ maxWidth: "900px", margin: "0 auto", padding: "64px 32px" }}>
             <p style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: C.accent, marginBottom: "12px", textAlign: "center" }}>
@@ -185,7 +209,6 @@ export default async function ReleasesPage() {
                   borderBottom: idx < PODCASTS.length - 1 ? `1px solid ${C.border}` : "none",
                 }}
               >
-                {/* Left: podcast artwork */}
                 <div style={{ flex: "0 0 240px", maxWidth: "280px", alignSelf: "flex-start" }}>
                   <img
                     src={podcast.artworkFile}
@@ -193,8 +216,6 @@ export default async function ReleasesPage() {
                     style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }}
                   />
                 </div>
-
-                {/* Right: info + link */}
                 <div style={{ flex: "1 1 260px", display: "flex", flexDirection: "column", gap: "12px", alignSelf: "flex-start" }}>
                   <p style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.light, margin: 0 }}>
                     {podcast.type}
@@ -248,4 +269,3 @@ export default async function ReleasesPage() {
     </>
   );
 }
-
