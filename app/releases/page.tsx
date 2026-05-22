@@ -123,10 +123,10 @@ return (
                 flexDirection: "row",
                 gap: "40px",
                 alignItems: "flex-start",
-                marginBottom: idx < RELEASES.length - 1 ? "80px" : "64px",
+                marginBottom: idx < releases.length - 1 ? "80px" : "64px",
                 flexWrap: "wrap",
-                paddingBottom: idx < RELEASES.length - 1 ? "80px" : 0,
-                borderBottom: idx < RELEASES.length - 1 ? `1px solid ${C.border}` : "none",
+                paddingBottom: idx < releases.length - 1 ? "80px" : 0,
+                borderBottom: idx < releases.length - 1 ? `1px solid ${C.border}` : "none",
               }}
             >
               {/* Left: album art */}
