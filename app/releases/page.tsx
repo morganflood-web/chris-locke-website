@@ -3,6 +3,48 @@ import { getReleases } from "@/lib/data";
 
 export const dynamic = "force-dynamic";
 
+
+function AlbumPlaceholder({ id, title, artworkFile }: { id: string; title: string; artworkFile: string | null }) {
+  if (artworkFile) {
+    return (
+      <img
+        src={artworkFile}
+        alt={title}
+        style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }}
+      />
+    );
+  }
+  return (
+    <div
+      style={{
+        width: "100%",
+        aspectRatio: "1 / 1",
+        backgroundColor: C.bgDeep,
+        borderRadius: "12px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        border: `1px solid ${C.border}`,
+      }}
+    >
+      <span
+        style={{
+          fontFamily: "var(--font-bebas), Impact, sans-serif",
+          fontSize: "clamp(1.2rem, 3vw, 2rem)",
+          letterSpacing: "0.1em",
+          color: C.light,
+          textAlign: "center",
+          padding: "16px",
+        }}
+      >
+        {title}
+      </span>
+    </div>
+  );
+}
+
+
+
 export default async function ReleasesPage() {
   const releases = await getReleases();
 
