@@ -153,6 +153,7 @@ export interface Release {
   year: string;
   type: string | null;
   awardText: string | null;
+  description?: string | null;
   coverImage: string;
   platforms: PlatformLink[];
   sortOrder: number;
