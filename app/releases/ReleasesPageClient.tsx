@@ -82,7 +82,6 @@ function AlbumPlaceholder({ id, title, artworkFile }: { id: string; title: strin
 
 export default function ReleasesPageClient({ releases }: { releases: Release[] }) {
   return (
-  return (
     <>
       <Header activePath="/releases" />
       <main style={{ backgroundColor: C.bg, minHeight: "80vh" }}>
