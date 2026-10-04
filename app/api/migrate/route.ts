@@ -8,7 +8,12 @@ export async function GET() {
     await sql`UPDATE releases SET sort_order = 2 WHERE id = 'r2'`;
     await sql`UPDATE releases SET sort_order = 3 WHERE id = 'r3'`;
     await sql`UPDATE releases SET sort_order = 4 WHERE id = 'r4'`;
-    const r = await sql`SELECT id, title, sort_order FROM releases ORDER BY sort_order ASC`;
+    await sql`
+      UPDATE releases
+      SET created_at = (SELECT created_at + interval '1 second' FROM releases WHERE id = 'r1')
+      WHERE id = 'r-captain-bones'
+    `;
+    const r = await sql`SELECT id, title, sort_order FROM releases ORDER BY sort_order ASC, created_at ASC`;
     return NextResponse.json({ ok: true, order: r.rows.map((x: Record<string,unknown>) => x.sort_order + ": " + x.title) });
   } catch (err) {
     return NextResponse.json({ ok: false, error: String(err) }, { status: 500 });
