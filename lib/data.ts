@@ -29,7 +29,7 @@ export async function getShows(): Promise<Show[]> {
     const result = await sql`
       SELECT id, date, venue, city, ticket_url, sold_out
       FROM shows
-      ORDER BY created_at ASC
+      ORDER BY sort_order ASC
     `;
     return result.rows;
   });
