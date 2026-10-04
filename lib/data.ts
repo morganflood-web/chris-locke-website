@@ -4,6 +4,17 @@ import type { Show, Release, Bio } from './db';
 // Neon free tier suspends compute after ~5min of inactivity.
 // First request can time out while the compute wakes up, causing a 500.
 // This wrapper retries once after a short delay — by then Neon is warm.
+
+// Images exist in public/images/ — map by release ID to guarantee correct paths
+const RELEASE_IMAGES: Record<string, string> = {
+  'r1': '/images/tiki-madness.jpg',
+  'r2': '/images/chris-and-sean.jpg',
+  'r3': '/images/demons.jpg',
+  'r4': '/images/world-embarrassing.jpg',
+  'r-captain-bones': '/images/captain-bones.jpg',
+};
+
+
 async function withRetry<T>(fn: () => Promise<T>): Promise<T> {
   try {
     return await fn();
@@ -57,7 +68,7 @@ export async function getReleases(): Promise<Release[]> {
     year: row.year,
     type: (row.type ?? null) as string | null,
     awardText: (row.award_text ?? null) as string | null,
-    coverImage: row.cover_image ?? '/images/release-placeholder.svg',
+    coverImage: RELEASE_IMAGES[String(row.id)] ?? row.cover_image ?? '/images/release-placeholder.svg',
     platforms: parsePlatforms(row.platforms),
     sortOrder: row.sort_order ?? 0,
     youtubeUrl: row.youtube_url,
