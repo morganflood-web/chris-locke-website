@@ -3,13 +3,13 @@ import { sql } from "@vercel/postgres";
 export const dynamic = "force-dynamic";
 export async function GET() {
   try {
-    await sql`UPDATE releases SET cover_image='/images/tiki-madness.jpg' WHERE title ILIKE '%TIKI MADNESS%'`;
-    await sql`UPDATE releases SET cover_image='/images/chris-and-sean.jpg' WHERE title ILIKE '%CHRIS%SEAN%' OR title ILIKE '%TONY%KEITH%'`;
-    await sql`UPDATE releases SET cover_image='/images/demons.jpg' WHERE title ILIKE '%DEMONS%'`;
-    await sql`UPDATE releases SET cover_image='/images/world-embarrassing.jpg' WHERE title ILIKE '%WORLD%EMBARRASS%'`;
-    await sql`UPDATE releases SET cover_image='/images/captain-bones.jpg' WHERE title ILIKE '%CAPTAIN BONES%'`;
-    const r = await sql`SELECT id, title, cover_image FROM releases ORDER BY created_at ASC`;
-    return NextResponse.json({ ok: true, releases: r.rows });
+    await sql`UPDATE releases SET sort_order = 0 WHERE id = 'r1'`;
+    await sql`UPDATE releases SET sort_order = 1 WHERE id = 'r-captain-bones'`;
+    await sql`UPDATE releases SET sort_order = 2 WHERE id = 'r2'`;
+    await sql`UPDATE releases SET sort_order = 3 WHERE id = 'r3'`;
+    await sql`UPDATE releases SET sort_order = 4 WHERE id = 'r4'`;
+    const r = await sql`SELECT id, title, sort_order FROM releases ORDER BY sort_order ASC`;
+    return NextResponse.json({ ok: true, order: r.rows.map((x: Record<string,unknown>) => x.sort_order + ": " + x.title) });
   } catch (err) {
     return NextResponse.json({ ok: false, error: String(err) }, { status: 500 });
   }
