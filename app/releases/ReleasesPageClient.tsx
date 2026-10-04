@@ -1,6 +1,8 @@
 "use client";
 
+import type { Release } from "@/lib/db";
 import { Header, Footer, C, EmailSignup } from "../_components/shared";
+
 
 
 const PODCASTS = [
@@ -77,9 +79,9 @@ function AlbumPlaceholder({ id, title, artworkFile }: { id: string; title: strin
 
 
 
-import type { Release } from "@/lib/db";
 
 export default function ReleasesPageClient({ releases }: { releases: Release[] }) {
+  return (
   return (
     <>
       <Header activePath="/releases" />
