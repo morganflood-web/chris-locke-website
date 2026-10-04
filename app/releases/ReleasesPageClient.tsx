@@ -39,7 +39,7 @@ const PODCASTS = [
 ];
 
 function AlbumPlaceholder({ id, title, artworkFile }: { id: string; title: string; artworkFile: string | null }) {
-  if (artworkFile) {
+  if (artworkFile && !artworkFile.includes('placeholder')) {
     return (
       <img
         src={artworkFile}
