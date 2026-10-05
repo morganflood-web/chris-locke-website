@@ -58,7 +58,7 @@ export async function getReleases(): Promise<Release[]> {
              youtube_url, spotify_url, apple_music_url, apple_tv_url,
              amazon_music_url, youtube_music_url
       FROM releases
-      ORDER BY created_at ASC
+      ORDER BY sort_order ASC, created_at ASC
     `;
     return result.rows;
   });
