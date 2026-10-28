@@ -29,11 +29,10 @@ export async function getShows(): Promise<Show[]> {
     const result = await sql`
       SELECT id, date, venue, city, ticket_url, sold_out
       FROM shows
-      ORDER BY sort_order ASC
     `;
     return result.rows;
   });
-  return rows.map((row) => ({
+  const shows = rows.map((row) => ({
     id: row.id,
     date: row.date,
     venue: row.venue,
@@ -41,6 +40,9 @@ export async function getShows(): Promise<Show[]> {
     ticketUrl: row.ticket_url,
     soldOut: row.sold_out,
   }));
+  // Sort chronologically regardless of insertion order
+  shows.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  return shows;
 }
 
 function parsePlatforms(raw: unknown): import('./db').PlatformLink[] {
